@@ -1,0 +1,101 @@
+<html>
+ 
+<head>
+<title>User Ui Ux</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('.datepicker').datepicker({
+	 editable: false,
+	format: 'dd-mm-yyyy' 
+	});
+	 $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });
+	
+  });
+        
+$(document).ready(function(){
+var i = 1;
+	$(".addCF").click(function(){
+	i++;
+		$("tbody").append(' <tr id="'+i+'">'+
+		'<td style="border-right: 2px solid;"><input type="text" class="datepicker" id="d'+i+'"/></td>'+'<td><input  type="text" id="t'+i+'" class="timepicker"/></td>'+
+		'<td><input type="text" id="a'+i+'"/></td>'+
+		'<td><input type="text" id="b'+i+'"/></td>'+
+		'<td><input type="text" id="c'+i+'"/></td>'+
+		'<td><input type="text" id="d'+i+'"/></td>'+
+		'<td><input type="text" id="e'+i+'"/></td>'+
+		'<td><input type="text" id="f'+i+'"/></td>'+
+		'<td><input type="text" id="g'+i+'"/></td>'+
+		'<td><input type="text" id="h'+i+'"/></td>'+
+		'<td><input type="text" id="i'+i+'"/></td>'+
+		'<td style="text-align: center;"><a href="javascript:void(0);"  class="remCF material-icons red-text">remove_circle</a></td>'+
+		'</tr>');
+		$('.datepicker').datepicker({
+	 editable: false,
+	format: 'dd-mm-yyyy' 
+	});
+	 $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });
+	});
+    $("#customFields").on('click','.remCF',function(){
+        $(this).parent().parent().remove();
+    });
+});
+</script>
+<style>
+td {
+    padding: 0px 5px;
+	}
+</style>
+</head>
+<body>
+<div class="row">
+	<div class="col offset-l4 l3 ">
+	 <div class="input-field col l10">
+          <!-- <input placeholder="Placeholder" id="first_name" type="text" class="validate"> -->
+		    
+			<i class="material-icons prefix">date_range</i>
+		   <input type="text" class="datepicker" >
+          <label for="first_name">Date</label>
+     </div>
+	 <div class="col l2" style="margin-top: 1rem;">
+	<button class="btn-floating waves-effect waves-light red" type="button" ><i class="material-icons">send</i></button>
+	</div>
+	</div>
+	
+</div>
+<div class="row">
+	<div class="col l12" style="border: 1px solid black;"> 
+	
+      <table id="customFields" class="striped highlight centered responsive-table">
+        <thead>
+            <th style="border-right: 2px solid;">Date</th>
+            <th>Time</th>
+            <th>001</th>
+            <th>002</th>
+            <th>003</th>
+			<th>004</th>
+			<th>005</th>
+			<th>006</th>
+			<th>007</th>
+			<th>008</th>
+			<th>009</th>
+			<th><a href="javascript:void(0);" class="addCF material-icons red-text">add_circle</a></th>
+        </thead>
+		<tbody></tbody>
+	  
+    </table>
+
+	</div>
+</div>
+
+</body>
+</html>
